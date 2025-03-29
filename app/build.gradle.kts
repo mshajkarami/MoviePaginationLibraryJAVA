@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -42,12 +43,19 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     // Retrofit 2.9.0
-    val retrofitVersions = "2.9.0"
-    implementation("com.squareup.retrofit2:retrofit:$retrofitVersions")
-    implementation("com.google.code.gson:gson:$retrofitVersions")
-    implementation("com.squareup.retrofit2:converter-gson::$retrofitVersions")
-    // RxJava3 with retrofit
-    implementation("com.squareup.retrofit2:adapter-rxjava3:$retrofitVersions")
+//    val retrofitVersions = "2.11.0"
+//    implementation("com.squareup.retrofit2:retrofit:$retrofitVersionstVersions")
+//    implementation("com.google.code.gson:gson:$retrofitVersions")
+//    implementation("com.squareup.retrofit2:converter-gson::$retrofitVersions")
+//    // RxJava3 with retrofit
+//    implementation("com.squareup.retrofit2:adapter-rxjava3:$retrofitVersions")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+    implementation("io.reactivex.rxjava3:rxjava:3.1.5")
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
     // paging Library
     val pagingVersions = "3.1.1"
