@@ -36,11 +36,11 @@ public class MoviePagingSource extends RxPagingSource<Integer, Movie> {
                     .map(movies -> toLoadResult(movies, page))
                     .onErrorReturn(LoadResult.Error::new);
         } catch (Exception e) {
-            return Single.just(new LoadResult.Error(e));
+            return Single.just(new LoadResult.Error<>(e));
         }
     }
 
     private LoadResult<Integer, Movie> toLoadResult(List<Movie> movies, int page){
-        return new LoadResult.Page(movies,page ==1 ? null : page -1 , page+1);
+        return new LoadResult.Page<>(movies,page ==1 ? null : page -1 , page+1);
     }
 }

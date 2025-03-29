@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -64,8 +63,8 @@ dependencies {
     implementation("androidx.paging:paging-rxjava3:$pagingVersions")
 
     // Hilt Dagger
-    implementation("com.google.dagger:hilt-android:2.41")
-    annotationProcessor("com.google.dagger:hilt-compiler:2.41")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    annotationProcessor("com.google.dagger:hilt-compiler:2.51.1")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.13.0")
