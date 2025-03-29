@@ -1,7 +1,6 @@
-package ir.hajkarami.moviepaginationlibraryjava;
+package ir.hajkarami.moviepaginationlibraryjava.activity;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +16,7 @@ import com.bumptech.glide.RequestManager;
 import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
+import ir.hajkarami.moviepaginationlibraryjava.R;
 import ir.hajkarami.moviepaginationlibraryjava.adapter.MovieLoadStateAdapter;
 import ir.hajkarami.moviepaginationlibraryjava.adapter.MoviesAdapter;
 import ir.hajkarami.moviepaginationlibraryjava.databinding.ActivityMainBinding;
