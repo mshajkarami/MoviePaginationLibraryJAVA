@@ -42,11 +42,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
         if (Utils.API_KEY == null || Utils.API_KEY.isEmpty()) {
             Toast.makeText(this, "Error in API Key", Toast.LENGTH_SHORT).show();
         }
@@ -55,10 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         initRecyclerViewAndAdapter();
 
-        mainActivityViewModel.moviePagingDataFlowable.subscribe(
-                moviePagingData -> {
-                    moviesAdapter.submitData(getLifecycle(), moviePagingData);
-                });
+        mainActivityViewModel.moviePagingDataFlowable.subscribe(moviePagingData -> {
+            moviesAdapter.submitData(getLifecycle(), moviePagingData);
+        });
     }
 
     private void initRecyclerViewAndAdapter() {
