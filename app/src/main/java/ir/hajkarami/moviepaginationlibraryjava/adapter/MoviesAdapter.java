@@ -23,8 +23,8 @@ public class MoviesAdapter extends PagingDataAdapter<Movie, MoviesAdapter.MovieV
 
     RequestManager glide;
 
-    public MoviesAdapter(@NonNull DiffUtil.ItemCallback<Movie> diffCallback, @NonNull CoroutineDispatcher mainDispatcher, @NonNull CoroutineDispatcher workerDispatcher, RequestManager glide) {
-        super(diffCallback, mainDispatcher, workerDispatcher);
+    public MoviesAdapter(@NonNull DiffUtil.ItemCallback<Movie> diffCallback,RequestManager glide) {
+        super(diffCallback);
         this.glide = glide;
     }
 
