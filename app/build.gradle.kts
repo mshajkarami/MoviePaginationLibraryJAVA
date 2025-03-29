@@ -6,6 +6,10 @@ android {
     namespace = "ir.hajkarami.moviepaginationlibraryjava"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "ir.hajkarami.moviepaginationlibraryjava"
         minSdk = 24
